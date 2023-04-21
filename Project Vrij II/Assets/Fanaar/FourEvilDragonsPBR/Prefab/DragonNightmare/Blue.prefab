@@ -2263,6 +2263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 441462}
   - component: {fileID: 9587272}
+  - component: {fileID: 5162503446124450524}
   m_Layer: 0
   m_Name: Blue
   m_TagString: Untagged
@@ -2297,7 +2298,7 @@ Animator:
   m_GameObject: {fileID: 193776}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 2f4e6492f506bbb4a8aeba850e3bb52f, type: 3}
-  m_Controller: {fileID: 9100000, guid: 08f6634017a8e784a8807f193b72bec9, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6a5dffb5e85d3ce418972946c1a7f248, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2307,6 +2308,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &5162503446124450524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd52cf67e391a8741b3bd918b6b683b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
 --- !u!1 &194148
 GameObject:
   m_ObjectHideFlags: 0
