@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Fanaar/Scenes/Fanaar.unity
+    guid: bb843f39783fd6d49a7e1357fa47c775
   m_configObjects: {}
