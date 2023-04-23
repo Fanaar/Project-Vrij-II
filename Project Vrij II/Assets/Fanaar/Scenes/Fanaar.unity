@@ -243,6 +243,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Laser ball
       objectReference: {fileID: 0}
+    - target: {fileID: 4045915894072218086, guid: 58367c47e9f22374da1cea242f42fef8, type: 3}
+      propertyPath: m_TagString
+      value: Arrow
+      objectReference: {fileID: 0}
     - target: {fileID: 8400496653319465403, guid: 58367c47e9f22374da1cea242f42fef8, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -520,6 +524,21 @@ MonoBehaviour:
   - {fileID: 1180820463}
   - {fileID: 64426655}
   - {fileID: 605113471}
+--- !u!114 &51830930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51830923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 054c86c880017094b82ccc445ba1d74b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  Enemy: {fileID: 51830923}
+  animator: {fileID: 51830924}
 --- !u!1 &64426654
 GameObject:
   m_ObjectHideFlags: 0
@@ -4241,7 +4260,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8944336655422409496, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: field of view
-      value: 25
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409496, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: far clip plane
@@ -4261,11 +4280,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 448.15802
+      value: 447.40002
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.7649999
+      value: 3.475
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: m_LocalPosition.z
