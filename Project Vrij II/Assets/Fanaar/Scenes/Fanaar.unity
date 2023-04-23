@@ -436,6 +436,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 193776, guid: edd34a89cfe571f4ca766dcca2459bbe, type: 3}
   m_PrefabInstance: {fileID: 1797509289}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &51830924 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9587272, guid: edd34a89cfe571f4ca766dcca2459bbe, type: 3}
+  m_PrefabInstance: {fileID: 1797509289}
+  m_PrefabAsset: {fileID: 0}
 --- !u!195 &51830926
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -488,9 +493,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 51830926}
   startWaitTime: 4
-  timeToRotate: 2
+  timeToRotate: 2.5
   speedWalk: 1
-  speedRun: 3
+  speedRun: 2
   viewRadius: 15
   viewAngle: 90
   playerMask:
@@ -502,6 +507,7 @@ MonoBehaviour:
   meshResolution: 1
   edgeIterations: 4
   edgeDistance: 0.5
+  animator: {fileID: 51830924}
   waypoints:
   - {fileID: 878723530}
   - {fileID: 1356254310}

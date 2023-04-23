@@ -17,6 +17,7 @@ public class AIController : MonoBehaviour
     public float meshResolution = 1.0f;             //  How many rays will cast per degree
     public int edgeIterations = 4;                  //  Number of iterations to get a better performance of the mesh filter when the raycast hit an obstacule
     public float edgeDistance = 0.5f;               //  Max distance to calcule the a minumun and a maximum raycast when hits something
+    public Animator animator;
 
 
     public Transform[] waypoints;                   //  All the waypoints where the enemy patrols
@@ -48,6 +49,9 @@ public class AIController : MonoBehaviour
         navMeshAgent.isStopped = false;
         navMeshAgent.speed = speedWalk;             //  Set the navemesh speed with the normal speed of the enemy
         navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);    //  Set the destination to the first waypoint
+
+        animator = gameObject.GetComponent<Animator>();
+        animator.SetBool("isChasing", false);
     }
 
     private void Update()
@@ -67,11 +71,12 @@ public class AIController : MonoBehaviour
     private void Chasing()
     {
         //  The enemy is chasing the player
-        m_PlayerNear = false;                       //  Set false that hte player is near beacause the enemy already sees the player
+        m_PlayerNear = false;                       //  Set false that the player is near beacause the enemy already sees the player
         playerLastPosition = Vector3.zero;          //  Reset the player near position
 
         if (!m_CaughtPlayer)
         {
+            animator.SetBool("isChasing", true);
             Move(speedRun);
             navMeshAgent.SetDestination(m_PlayerPosition);          //  set the destination of the enemy to the player location
         }
@@ -86,6 +91,7 @@ public class AIController : MonoBehaviour
                 m_TimeToRotate = timeToRotate;
                 m_WaitTime = startWaitTime;
                 navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
+                
             }
             else
             {
