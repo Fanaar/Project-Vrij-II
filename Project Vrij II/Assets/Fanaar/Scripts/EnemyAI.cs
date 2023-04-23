@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour
     int waypointIndex;
     Vector3 target;
 
+    float timer;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -19,8 +20,12 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
+        timer = 5;
+
         if(Vector3.Distance(transform.position, target) < 1)
         {
+            Invoke("UpdateDestination", timer);
             IterateWaypointIndex();
             UpdateDestination();
         }
