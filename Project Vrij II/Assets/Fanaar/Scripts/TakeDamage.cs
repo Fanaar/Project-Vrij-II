@@ -19,7 +19,7 @@ public class TakeDamage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Dying();
     }
 
     public void OnTriggerEnter(Collider other)
@@ -28,7 +28,7 @@ public class TakeDamage : MonoBehaviour
         {
             damage++;
             animator.SetBool("isHit", true);
-            Invoke("BackToNormal", 2);
+            Invoke("BackToNormal", 1.5f);
             Debug.Log("Hit enemy!");
         }
     }
@@ -40,10 +40,18 @@ public class TakeDamage : MonoBehaviour
     }
     public void Dying()
     {
-        if(damage >= 1)
+        if(damage >= 2)
         {
             Debug.Log("Dead!");
-            Enemy.SetActive(false);
+            GetComponent<AIController>().enabled = false;
+            animator.SetBool("isDead", true);
+            animator.SetBool("isChasing", false);
+            Invoke("isDead", 7);
         }
+    }
+
+    public void isDead()
+    {
+        Enemy.SetActive(false);
     }
 }

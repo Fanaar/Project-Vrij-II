@@ -20,8 +20,8 @@ public class AIController : MonoBehaviour
     public Animator animator;
 
 
-    public Transform[] waypoints;                   //  All the waypoints where the enemy patrols
-    int m_CurrentWaypointIndex;                     //  Current waypoint where the enemy is going to
+    //public Transform[] waypoints;                   //  All the waypoints where the enemy patrols
+    //int m_CurrentWaypointIndex;                     //  Current waypoint where the enemy is going to
 
     Vector3 playerLastPosition = Vector3.zero;      //  Last position of the player when was near the enemy
     Vector3 m_PlayerPosition;                       //  Last position of the player when the player is seen by the enemy
@@ -43,12 +43,12 @@ public class AIController : MonoBehaviour
         m_WaitTime = startWaitTime;                 //  Set the wait time variable that will change
         m_TimeToRotate = timeToRotate;
 
-        m_CurrentWaypointIndex = 0;                 //  Set the initial waypoint
+       // m_CurrentWaypointIndex = 0;                 //  Set the initial waypoint
         navMeshAgent = GetComponent<NavMeshAgent>();
 
         navMeshAgent.isStopped = false;
         navMeshAgent.speed = speedWalk;             //  Set the navemesh speed with the normal speed of the enemy
-        navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);    //  Set the destination to the first waypoint
+       // navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);    //  Set the destination to the first waypoint
 
         animator = gameObject.GetComponent<Animator>();
         animator.SetBool("isChasing", false);
@@ -80,7 +80,7 @@ public class AIController : MonoBehaviour
             Move(speedRun);
             navMeshAgent.SetDestination(m_PlayerPosition);          //  set the destination of the enemy to the player location
         }
-        if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)    //  Control if the enemy arrive to the player location
+        /*if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)    //  Control if the enemy arrive to the player location
         {
             if (m_WaitTime <= 0 && !m_CaughtPlayer && Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) >= 6f)
             {
@@ -100,7 +100,7 @@ public class AIController : MonoBehaviour
                     Stop();
                 m_WaitTime -= Time.deltaTime;
             }
-        }
+        }*/
     }
 
     private void Patroling()
@@ -111,7 +111,7 @@ public class AIController : MonoBehaviour
             if (m_TimeToRotate <= 0)
             {
                 Move(speedWalk);
-                LookingPlayer(playerLastPosition);
+                //LookingPlayer(playerLastPosition);
             }
             else
             {
@@ -120,7 +120,7 @@ public class AIController : MonoBehaviour
                 m_TimeToRotate -= Time.deltaTime;
             }
         }
-        else
+        /*else
         {
             m_PlayerNear = false;           //  The player is no near when the enemy is platroling
             playerLastPosition = Vector3.zero;
@@ -140,7 +140,7 @@ public class AIController : MonoBehaviour
                     m_WaitTime -= Time.deltaTime;
                 }
             }
-        }
+        }*/
     }
 
     private void OnAnimatorMove()
@@ -148,11 +148,11 @@ public class AIController : MonoBehaviour
 
     }
 
-    public void NextPoint()
+   /* public void NextPoint()
     {
         m_CurrentWaypointIndex = (m_CurrentWaypointIndex + 1) % waypoints.Length;
         navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
-    }
+    }*/
 
     void Stop()
     {
@@ -171,7 +171,7 @@ public class AIController : MonoBehaviour
         m_CaughtPlayer = true;
     }
 
-    void LookingPlayer(Vector3 player)
+    /*void LookingPlayer(Vector3 player)
     {
         navMeshAgent.SetDestination(player);
         if (Vector3.Distance(transform.position, player) <= 0.3)
@@ -190,7 +190,7 @@ public class AIController : MonoBehaviour
                 m_WaitTime -= Time.deltaTime;
             }
         }
-    }
+    }*/
 
     void EnviromentView()
     {
