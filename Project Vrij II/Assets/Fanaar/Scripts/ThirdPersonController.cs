@@ -187,8 +187,18 @@ namespace StarterAssets
 
         public void Shoot()
         {
-            GameObject arrow = Instantiate(arrowObject, arrowPoint.position, transform.rotation);
-            arrow.GetComponent<Rigidbody>().AddForce(transform.forward * 25f, ForceMode.Impulse);
+            /* GameObject arrow = Instantiate(arrowObject, arrowPoint.position, transform.rotation);
+             arrow.GetComponent<Rigidbody>().AddForce(transform.forward * 25f, ForceMode.Impulse);*/
+
+            /* GameObject arrow = Instantiate(arrowObject, arrowPoint.position, Quaternion.identity);
+             Vector3 cameraForward = _mainCamera.transform.forward;
+             cameraForward.y = 0f; // Ignore vertical component
+             arrow.transform.forward = cameraForward;
+             arrow.GetComponent<Rigidbody>().AddForce(cameraForward * 25f, ForceMode.Impulse);*/
+            GameObject arrow = Instantiate(arrowObject, arrowPoint.position, Quaternion.identity);
+            Vector3 cameraForward = _mainCamera.transform.forward;
+            arrow.transform.rotation = Quaternion.LookRotation(cameraForward);
+            arrow.GetComponent<Rigidbody>().AddForce(cameraForward * 25f, ForceMode.Impulse);
         }
 
         private void LateUpdate()
