@@ -40,13 +40,13 @@ public class TakeDamage : MonoBehaviour
     }
     public void Dying()
     {
-        if(damage >= 2)
+        if(damage >= 5)
         {
             Debug.Log("Dead!");
             GetComponent<AIController>().enabled = false;
             animator.SetBool("isDead", true);
             animator.SetBool("isChasing", false);
-            Invoke("isDead", 7);
+            Invoke("isDead", 5);
         }
     }
 
