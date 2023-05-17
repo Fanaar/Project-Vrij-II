@@ -15,7 +15,7 @@ public class PlayerHealth : MonoBehaviour
     bool isDead;                       // Whether the player is dead or not
     bool damaged;                      // Whether the player has taken damage or not
 
-    public Animator animator;
+    
 
     void Start()
     {
