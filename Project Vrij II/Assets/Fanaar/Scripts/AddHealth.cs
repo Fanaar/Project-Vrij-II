@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AddHealth : MonoBehaviour
 {
+    public float selfDestructDelay = 0f; // Delay before self-destructing the object
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -23,9 +25,11 @@ public class AddHealth : MonoBehaviour
                     playerHealth.currentHealth = playerHealth.startingHealth;
                 }
                 playerHealth.UpdateHealthUI();
+
+                // Self-destruct the object after a delay
+                Destroy(gameObject, selfDestructDelay);
             }
         }
     }
 }
-
 
