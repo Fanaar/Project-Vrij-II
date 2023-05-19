@@ -56,7 +56,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    void UpdateHealthUI()
+    public void UpdateHealthUI()
     {
         healthSlider.value = currentHealth;
     }
