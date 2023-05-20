@@ -56,10 +56,27 @@ public class ShootingLeaves : MonoBehaviour
 
         // Trigger the boss fight
         StartBossFight();
+
+        // Wait for the boss fight to end
+        yield return new WaitForSeconds(numberOfObjects * objectSpacing / shootSpeed);
+
+        // Check if the player is still not moving
+        if (player.position != transform.position)
+        {
+            // Restart the idle timer
+            ResetIdleTimer();
+        }
     }
 
     public void StartBossFight()
     {
+        if (isWaitingForBossFight)
+        {
+            return; // Already waiting for a boss fight
+        }
+
+        isWaitingForBossFight = true;
+
         // Calculate the direction from the boss to the player
         Vector3 direction = (player.position - transform.position).normalized;
 
@@ -99,12 +116,19 @@ public class ShootingLeaves : MonoBehaviour
             }
         }
 
-        // If no deactivated object is found, instantiate a new one and add it to the object pool
-        GameObject obj = Instantiate(objectPrefab);
-        obj.SetActive(false);
-        objectPool.Add(obj);
+        // If no deactivated object is found and the maximum number of objects hasn't been reached,
+        // instantiate a new one and add it to the object pool
+        if (objectPool.Count < numberOfObjects)
+        {
+            GameObject obj = Instantiate(objectPrefab);
+            obj.SetActive(false);
+            objectPool.Add(obj);
+            return obj;
+        }
 
-        return obj;
+        // Return null if the maximum number of objects has already been reached
+        return null;
     }
 }
+
 
