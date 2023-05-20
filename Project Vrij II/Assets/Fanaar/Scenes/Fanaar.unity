@@ -2451,6 +2451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e440be1fc7953e24aa98cc7df3d774a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selfDestructDelay: 0
 --- !u!65 &497759643
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4344,7 +4345,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 797665105}
-  animator: {fileID: 797665104}
 --- !u!114 &797665107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9994,6 +9994,55 @@ Transform:
   m_Father: {fileID: 987397698}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1800081674
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1800081675}
+  - component: {fileID: 1800081676}
+  m_Layer: 0
+  m_Name: Shooting Leaves
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1800081675
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800081674}
+  m_LocalRotation: {x: -0.11543014, y: -0, z: -0, w: 0.99331564}
+  m_LocalPosition: {x: -2.28, y: 15.106, z: -13.514}
+  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: -13.257, y: 0, z: 0}
+--- !u!114 &1800081676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800081674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2cc112564dc5134ea4b608003e05fcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefab: {fileID: 639133720511498721, guid: 89ad0d11870c98a47b98bd8da2685409, type: 3}
+  numberOfObjects: 5
+  objectSpacing: 1
+  shootSpeed: 10
+  player: {fileID: 797665112}
 --- !u!1001 &1801084268
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RootDamage : MonoBehaviour
+public class LeavesDamage : MonoBehaviour
 {
     public PlayerHealth playerHealth;
 
@@ -10,7 +10,7 @@ public class RootDamage : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            playerHealth.TakeDamage(5);
+            playerHealth.TakeDamage(2);
 
         }
     }
