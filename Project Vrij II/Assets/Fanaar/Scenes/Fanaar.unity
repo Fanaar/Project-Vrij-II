@@ -2355,6 +2355,55 @@ Transform:
   m_Father: {fileID: 2093251150}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &449611704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 449611706}
+  - component: {fileID: 449611705}
+  m_Layer: 0
+  m_Name: Leaf Shooter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &449611705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449611704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2149aaa40114dc844a2bc28dd6e03c59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leafPrefab: {fileID: 4305985769612388242, guid: ed3bcbd96550356428fe6f7094476475, type: 3}
+  playerTransform: {fileID: 797665112}
+  idleTimeThreshold: 5
+  shootForce: 1000
+  numberOfLeaves: 5
+--- !u!4 &449611706
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449611704}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.28, y: 14.52, z: -13.36}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &463521896
 GameObject:
   m_ObjectHideFlags: 0
@@ -4287,6 +4336,7 @@ GameObject:
   - component: {fileID: 797665107}
   - component: {fileID: 797665105}
   - component: {fileID: 797665106}
+  - component: {fileID: 797665113}
   m_Layer: 6
   m_Name: PlayerArmature
   m_TagString: Player
@@ -4565,6 +4615,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: -186.684, z: 0}
+--- !u!114 &797665113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797665103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2437c5a35677b4b80d33b00026cdb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 797665105}
 --- !u!1 &802077168
 GameObject:
   m_ObjectHideFlags: 0
@@ -9994,55 +10057,6 @@ Transform:
   m_Father: {fileID: 987397698}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1800081674
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1800081675}
-  - component: {fileID: 1800081676}
-  m_Layer: 0
-  m_Name: Shooting Leaves
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1800081675
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1800081674}
-  m_LocalRotation: {x: -0.11543014, y: -0, z: -0, w: 0.99331564}
-  m_LocalPosition: {x: -2.28, y: 15.106, z: -13.514}
-  m_LocalScale: {x: 50, y: 50, z: 50}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: -13.257, y: 0, z: 0}
---- !u!114 &1800081676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1800081674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2cc112564dc5134ea4b608003e05fcc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectPrefab: {fileID: 639133720511498721, guid: 89ad0d11870c98a47b98bd8da2685409, type: 3}
-  numberOfObjects: 5
-  objectSpacing: 1
-  shootSpeed: 10
-  player: {fileID: 797665112}
 --- !u!1001 &1801084268
 PrefabInstance:
   m_ObjectHideFlags: 0

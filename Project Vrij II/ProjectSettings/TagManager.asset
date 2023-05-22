@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Arrow
   - Root
+  - Leaf
   layers:
   - Default
   - TransparentFX
